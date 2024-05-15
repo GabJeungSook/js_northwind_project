@@ -49,6 +49,7 @@ function displayCustomerOrders(data)
     const table = document.getElementById('order_table');
     const product_table = document.getElementById('products_table');
     const order_count_label = document.getElementById('order_count');
+    const product_count_label = document.getElementById('product_count');
     // console.log(data['data'].length);
     if(data['data'].length === 0)
     {
@@ -63,20 +64,22 @@ function displayCustomerOrders(data)
                         +'<tbody class="divide-y divide-gray-200 bg-white">'
                         + '<tr><td colspan="4" class="text-center p-4 text-semibold text-md italic">No orders found</td></tr>'
                         +'</tbody>';
+        order_count_label.textContent = "---";
         product_table.innerHTML = '<thead class="bg-gray-50">'
                         +'<tr>'
                         +'<th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Product ID</th>'
-                        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit Price</th>'
-                        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Quantity</th>'
-                        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">% Discount</th>'
-                        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Amount</th>'
-                        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discount</th>'
-                        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discounted Value</th>'
+                        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit Price</th>'
+                        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Quantity</th>'
+                        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">% Discount</th>'
+                        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Amount</th>'
+                        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discount</th>'
+                        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discounted Value</th>'
                         +'</tr>'
                         +'</thead>' 
                         +'<tbody class="divide-y divide-gray-200 bg-white">'
                         + '<tr><td colspan="7" class="text-center p-4 text-semibold text-md italic">No products found</td></tr>'
                         +'</tbody>';
+        product_count_label.textContent = "---";
         return;
     }
         table.innerHTML = ''; 
@@ -152,18 +155,20 @@ function displayOrderProducts(data)
         table.innerHTML = '<thead class="bg-gray-50">'
         +'<tr>'
         +'<th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Product ID</th>'
-        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit Price</th>'
-        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Quantity</th>'
-        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">% Discount</th>'
-        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Amount</th>'
-        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discount</th>'
-        +'<th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discounted Value</th>'
+        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit Price</th>'
+        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Quantity</th>'
+        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">% Discount</th>'
+        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Amount</th>'
+        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discount</th>'
+        +'<th scope="col" class="px-3 pr-3 py-3.5 text-left text-sm font-semibold text-gray-900">Discounted Value</th>'
         +'</tr>'
         +'</thead>' 
         +'<tbody class="divide-y divide-gray-200 bg-white">'
         + '<tr><td colspan="7" class="text-center p-4 text-semibold text-md italic">No products found</td></tr>'
         +'</tbody>';
+        product_count_label.textContent = "---";
         return;
+       
     }
     table.innerHTML = '';   
 
